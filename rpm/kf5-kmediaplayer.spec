@@ -85,7 +85,7 @@ rm -rf %{buildroot}
 
 %files
 %defattr(-,root,root,-)
-%doc COPYING.LIB README.md
+%doc LICENSE README.md
 %{_kf5_libdir}/libKF5MediaPlayer.so.*
 %{_kf5_datadir}/kservicetypes5/*.desktop
 # >> files
