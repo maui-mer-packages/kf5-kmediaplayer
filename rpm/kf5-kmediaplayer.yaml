@@ -1,0 +1,68 @@
+Name         : kf5-kmediaplayer
+Version      : 4.99.0
+Release      : 1
+Group        : System/Base
+License      : X11, LGPLv2
+Summary      : KDE Frameworks 5 Tier 3 module with interface for media player features
+Description  : |
+  KDE Frameworks 5 Tier 3 module with interface for media player features
+URL          : http://www.kde.org
+SetupOptions : -q -n %{name}-%{version}/upstream
+
+Sources:
+    - "%{name}-%{version}.tar.xz"
+
+RpmLintIgnore:
+    - devel-file-in-non-devel-package
+    - no-changelogname-tag
+    - library-without-ldconfig-postin
+    - library-without-ldconfig-postun
+
+Configure    : none
+Builder      : none
+
+PkgBR:
+    - kf5-rpm-macros
+    - extra-cmake-modules
+    - qt5-tools
+    - kf5-kparts-devel
+    - kf5-kxmlgui-devel
+PkgConfigBR:
+    - Qt5Core
+    - Qt5DBus
+    - Qt5Xml
+    - Qt5Network
+    - Qt5Gui
+    - Qt5Widgets
+    - Qt5Concurrent
+    - Qt5Test
+Requires:
+    - kf5-filesystem
+
+RequiresPost:
+    - /sbin/ldconfig
+RequiresPostUn:
+    - /sbin/ldconfig
+
+Files:
+    - "%doc COPYING.LIB README.md"
+    - "%{_kf5_libdir}/libKF5MediaPlayer.so.*"
+    - "%{_kf5_datadir}/kservicetypes5/*.desktop"
+
+
+SubPackages:
+    - Name: devel
+      Group: Development/Libraries
+      Summary: Development files for %{name}
+      Description: |
+        The %{name}-devel package contains the files necessary to develop applications
+        that use %{name}.
+      Requires:
+          - kf5-kparts-devel
+          - kf5-kxmlgui-devel
+      Files:
+          - "%{_kf5_includedir}/kmediaplayer_version.h"
+          - "%{_kf5_includedir}/KMediaPlayer"
+          - "%{_kf5_libdir}/libKF5MediaPlayer.so"
+          - "%{_kf5_libdir}/cmake/KF5MediaPlayer"
+          - "%{_kf5_datadir}/dbus-1/interfaces/*.xml"
