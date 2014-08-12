@@ -1,4 +1,4 @@
-Name         : kf5-kmediaplayer
+Name         : kmediaplayer
 Version      : 5.0.0
 Release      : 1
 Group        : System/Base
@@ -25,8 +25,8 @@ PkgBR:
     - kf5-rpm-macros
     - extra-cmake-modules
     - qt5-tools
-    - kf5-kparts-devel
-    - kf5-kxmlgui-devel
+    - kparts-devel
+    - kxmlgui-devel
 PkgConfigBR:
     - Qt5Core
     - Qt5DBus
@@ -47,7 +47,7 @@ RequiresPostUn:
 Files:
     - "%doc LICENSE README.md"
     - "%{_kf5_libdir}/libKF5MediaPlayer.so.*"
-    - "%{_kf5_datadir}/kservicetypes5/*.desktop"
+    - "%{_kf5_servicetypesdir}/*.desktop"
 
 
 SubPackages:
@@ -58,11 +58,11 @@ SubPackages:
         The %{name}-devel package contains the files necessary to develop applications
         that use %{name}.
       Requires:
-          - kf5-kparts-devel
-          - kf5-kxmlgui-devel
+          - kparts-devel
+          - kxmlgui-devel
       Files:
           - "%{_kf5_includedir}/kmediaplayer_version.h"
           - "%{_kf5_includedir}/KMediaPlayer"
           - "%{_kf5_libdir}/libKF5MediaPlayer.so"
-          - "%{_kf5_libdir}/cmake/KF5MediaPlayer"
-          - "%{_kf5_datadir}/dbus-1/interfaces/*.xml"
+          - "%{_kf5_cmakedir}/KF5MediaPlayer"
+          - "%{_kf5_dbusinterfacesdir}/*.xml"
