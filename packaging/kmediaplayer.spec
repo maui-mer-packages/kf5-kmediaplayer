@@ -9,7 +9,7 @@ Name:       kmediaplayer
 # << macros
 
 Summary:    KDE Frameworks 5 Tier 3 module with interface for media player features
-Version:    5.2.0
+Version:    5.3.0
 Release:    1
 Group:      System/Base
 License:    X11, LGPLv2
