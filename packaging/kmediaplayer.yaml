@@ -7,7 +7,6 @@ Summary      : KDE Frameworks 5 Tier 3 module with interface for media player fe
 Description  : |
   KDE Frameworks 5 Tier 3 module with interface for media player features
 URL          : http://www.kde.org
-SetupOptions : -q -n %{name}-%{version}/upstream
 
 Sources:
     - "%{name}-%{version}.tar.xz"
